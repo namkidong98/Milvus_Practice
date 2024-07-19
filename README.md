@@ -35,13 +35,23 @@ Vector search example for retrieving related articles in Milvus VectorDB
     - IP, L2, COSINE의 경우 만약 사용하는 벡터가 정규화된(normalized) 벡터인 경우에는 IP와 COSINE은 일치하고 L2도 COSINE으로 표현된다 ( 관련 포스팅 )
     - 위 세 가지 임베딩 모델(서울대 SBERT, Cohere, Upstage) 모두 정규화된 벡터를 반환하는 것을 확인했다
     - 따라서 세 임베딩 모델을 사용하는 경우 Milvus의 metric_type을 바꿔가면서 검색 성능을 비교하는 것은 무의미한 일이다
-  
-```python
-# 임베딩 벡터의 정규화 유무 확인
 
+<br>
+
+## Appendix
+
+### 1. 임베딩 벡터의 정규화 유무 확인
+```python
 import numpy as np
 
 embedding_vector = [0.003940582275390625,-0.00004583597183227539,-0.01416015625, ...] # 실제 임베딩된 값 중 하나에 테스트
 norm = np.linalg.norm(embedding_vector)
 print(norm) # 1에 근접하면 해당 임베딩 모델은 정규화된 임베딩 벡터를 반환
 ```
+
+<br>
+
+### 2. <a href="https://github.com/Atipico1/Kor-IR">한국어 임베딩 모델 성능 리더보드</a>
+<image width=500 src="https://github.com/user-attachments/assets/c9441532-398c-42a0-8242-8361ca6829b7">
+
+- 해당 Github을 참고하여 Upstage와 Cohere의 임베딩 모델로 테스트해봐야겠다고 판단했다.
