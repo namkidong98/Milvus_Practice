@@ -55,3 +55,9 @@ print(norm) # 1에 근접하면 해당 임베딩 모델은 정규화된 임베�
 <image width=500 src="https://github.com/user-attachments/assets/c9441532-398c-42a0-8242-8361ca6829b7">
 
 - 해당 Github을 참고하여 Upstage와 Cohere의 임베딩 모델로 테스트해봐야겠다고 판단했다.
+
+<br>
+
+### 3. Milvus 설치
+- Docker에서 Milvus, Attu 이미지를 사용하여 서버를 구동하였고 GUI 툴인 Attu를 이용하여 Milvus를 조회 및 활용
+- 관련 포스팅 : 
